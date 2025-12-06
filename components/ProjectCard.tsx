@@ -5,27 +5,37 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/project/${project.slug}`}
-      className="group bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 border border-gray-100 flex flex-col"
+      className="group bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-300 border border-gray-100 flex flex-col settle-card"
     >
-      <div className="relative h-64 overflow-hidden bg-gray-100">
+      <div className="relative h-64 overflow-hidden bg-gray-100 flex items-center justify-center">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+          className={
+        project.image?.toLowerCase().endsWith(".svg")
+          ? "max-w-full max-h-full object-contain p-6"
+          : "w-full h-full object-cover group-hover:scale-105 transition-transform"
+          }
         />
 
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
           <span className="text-white font-medium">
-            View Case Study <span className="ml-2">→</span>
+        View Case Study <span className="ml-2">→</span>
           </span>
         </div>
       </div>
 
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center mb-4">
-          <div className="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mr-4">
-            <i className={`fas ${project.icon}`} />
-          </div>
+          {project.icon && (
+            <div className="w-12 h-12 rounded-xl bg-white-80 text-indigo-600 flex items-center justify-center text-xl mr-4 overflow-hidden">
+              <img 
+                src={project.icon} 
+                alt={`${project.title} icon`} 
+                className="w-full h-full object-contain p-1" 
+              />
+            </div>
+          )}
           <div>
             <h3 className="text-xl font-bold">{project.title}</h3>
             <span className="text-sm text-gray-500">{project.subtitle}</span>

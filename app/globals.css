@@ -48,3 +48,63 @@ body {
 .nav-active::after {
   width: 100%;
 }
+
+/* Small, tasteful hero animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 700ms cubic-bezier(.22,.9,.32,1) both;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float-slow {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+/* small helpers for animation delay (kept short and meaningful) */
+.animation-delay-150 { animation-delay: 150ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-450 { animation-delay: 450ms; }
+.animation-delay-600 { animation-delay: 600ms; }
+
+/* subtle focus/hover lift for hero buttons */
+.btn-hero {
+  transition: transform 220ms cubic-bezier(.22,.9,.32,1), box-shadow 220ms ease;
+}
+.btn-hero:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+
+/* Project card settle hover shadow (purplish / greenish) */
+.settle-card {
+  transition: transform 320ms cubic-bezier(.22,.9,.32,1), box-shadow 320ms ease;
+  will-change: transform, box-shadow;
+}
+.settle-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 18px 40px -18px rgba(139,92,246,0.28), /* soft purple wash */
+    0 10px 24px -18px rgba(34,197,94,0.12);  /* subtle green lift */
+}
+.settle-card:active {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px -22px rgba(139,92,246,0.18),
+    0 6px 14px -20px rgba(34,197,94,0.06);
+}
+
