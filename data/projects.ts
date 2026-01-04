@@ -41,9 +41,8 @@ export const projects: Project[] = [
     subtitle: "Field Service App",
     description: "Win more jobs and get \nmore jobs done right.",
 
-    image:
-      "https://app.dev.solvgo.com/_ipx/s_232x64/images/logo.svg",
-    icon: "",
+    image:"/solvgo-cover.png",
+    icon: "/solvgo-logo.png",
     // icon: "/solvgo-w-logo.png",
     tags: ["Flutter", "OpenAI API"],
     short:
@@ -106,14 +105,14 @@ export const projects: Project[] = [
     subtitle: "Food & Beverage Marketplace",
     description: "A personal finance tracker with real-time bank syncing and spending insights.",
     image:
-      "https://lh3.googleusercontent.com/0HwXi3XvZBPtXbVGWiIoABCiE6kjED2ZZY5aqhhYUUqiAslbb9HZW72HSq7Yi_L-mv3n",
-    icon: "https://play-lh.googleusercontent.com/PkI1euwXHh5AhgAHzPc1clKgVKcEWUJwyEizqiumF5kAtQOj1dwYgxFHqModI_yFXxY=w480-h960-rw",
+      "/find_eat_business_cover.png",
+    icon: "/find_eat_business_logo.png",
     tags: ["React Native", "Plaid API"],
     short:
       "A personal finance tracker with real-time bank syncing and spending insights.",
-    brandColor: "#3B82F6", // Blue
-    brandColorLight: "#EFF6FF",
-    brandColorDark: "#1E40AF",
+    brandColor: "#000000", // Blue
+    brandColorLight: "#000000",
+    brandColorDark: "#000000",
     appStoreUrl: "#",
     playStoreUrl: "#",
     features: [
@@ -125,18 +124,9 @@ export const projects: Project[] = [
           "Real-time spending alerts",
           "Customizable budget limits"
         ],
-        image: "https://lh3.googleusercontent.com/0HwXi3XvZBPtXbVGWiIoABCiE6kjED2ZZY5aqhhYUUqiAslbb9HZW72HSq7Yi_L-mv3n"
+        image: "/find_eat_business_cover.png"
       },
-      {
-        title: "Bank Integration",
-        description: "Securely connect your bank accounts for real-time transaction tracking and analysis.",
-        bullets: [
-          "256-bit encryption for all connections",
-          "Support for 10,000+ financial institutions",
-          "Real-time transaction updates"
-        ],
-        image: "https://lh3.googleusercontent.com/0HwXi3XvZBPtXbVGWiIoABCiE6kjED2ZZY5aqhhYUUqiAslbb9HZW72HSq7Yi_L-mv3n"
-      },
+
       {
         title: "Financial Insights",
         description: "Get personalized recommendations to improve your financial health and reach your goals faster.",
@@ -150,19 +140,19 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: "travelmate",
-    title: "TravelMate",
+    slug: "find-eat",
+    title: "Find Eat",
     subtitle: "Travel Companion",
     description: "A social travel app for planning trips, splitting expenses, and exploring local gems.",
     image:
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
-    icon: "fa-plane-departure",
+      "/find_eat_cover_1.png",
+    icon: "/find_eat_logo.png",
     tags: ["Flutter", "Google Maps"],
     short:
       "A social travel app for planning trips, splitting expenses, and exploring local gems.",
-    brandColor: "#10B981", // Green
-    brandColorLight: "#ECFDF5",
-    brandColorDark: "#059669",
+    brandColor: "#F97316", // Orange
+    brandColorLight: "#FFF7ED",
+    brandColorDark: "#EA580C",
     appStoreUrl: "#",
     playStoreUrl: "#",
     features: [
@@ -195,6 +185,236 @@ export const projects: Project[] = [
           "Community reviews and ratings"
         ],
         image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  },
+  {
+    slug: "aes",
+    title: "Audit Energetic Solutions",
+    subtitle: "Field Service App",
+    description: "Win more jobs and get \nmore jobs done right.",
+
+    image:"/aes_cover.png",
+    icon: "/aes_logo.png",
+    tags: ["Flutter", "OpenAI API"],
+    short:
+      "Win more jobs and get \nmore jobs done right. \nmore jobs done right.",
+    brandColor: "#001E41",
+    brandColorLight: "#F3F4F6",
+    brandColorDark: "#6D28D9",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Intelligent Task Automation",
+        description: "Automates repetitive tasks with AI-driven suggestions, saving time and improving focus.",
+        bullets: [
+          "High performance and smooth animations across devices",
+          "Accessible and polished UI patterns with thoughtful UX",
+          "Real-time sync across all your devices"
+        ],
+        image: "/aes_1.png"
+      }
+    ]
+  },
+  {
+    slug: "find-eat-business-2",
+    title: "Find Eat Business",
+    subtitle: "Food & Beverage Marketplace",
+    description: "A personal finance tracker with real-time bank syncing and spending insights.",
+    image:
+      "/find_eat_business_cover.png",
+    icon: "/find_eat_business_logo.png",
+    tags: ["React Native", "Plaid API"],
+    short:
+      "A personal finance tracker with real-time bank syncing and spending insights.",
+    brandColor: "#000000",
+    brandColorLight: "#000000",
+    brandColorDark: "#000000",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Smart Budgeting",
+        description: "Automatically categorize expenses and track spending patterns with AI-powered insights.",
+        bullets: [
+          "Automatic expense categorization",
+          "Real-time spending alerts",
+          "Customizable budget limits"
+        ],
+        image: "/find_eat_business_cover.png"
+      }
+    ]
+  },
+  {
+    slug: "find-eat-2",
+    title: "Find Eat",
+    subtitle: "Travel Companion",
+    description: "A social travel app for planning trips, splitting expenses, and exploring local gems.",
+    image:
+      "/find_eat_cover_1.png",
+    icon: "/find_eat_logo.png",
+    tags: ["Flutter", "Google Maps"],
+    short:
+      "A social travel app for planning trips, splitting expenses, and exploring local gems.",
+    brandColor: "#F97316",
+    brandColorLight: "#FFF7ED",
+    brandColorDark: "#EA580C",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Trip Planning",
+        description: "Collaborate with friends to plan the perfect trip with shared itineraries and real-time updates.",
+        bullets: [
+          "Shared trip boards",
+          "Real-time collaboration",
+          "Smart itinerary suggestions"
+        ],
+        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  },
+  {
+    slug: "solvgo-3",
+    title: "SolvGo",
+    subtitle: "Field Service App",
+    description: "Win more jobs and get \nmore jobs done right.",
+    image:"/solvgo-cover.png",
+    icon: "/solvgo-logo.png",
+    tags: ["Flutter", "OpenAI API"],
+    short:
+      "Win more jobs and get \nmore jobs done right. \nmore jobs done right.",
+    brandColor: "#41AAAA",
+    brandColorLight: "#F3F4F6",
+    brandColorDark: "#6D28D9",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Intelligent Task Automation",
+        description: "Automates repetitive tasks with AI-driven suggestions, saving time and improving focus.",
+        bullets: [
+          "High performance and smooth animations across devices",
+          "Accessible and polished UI patterns with thoughtful UX",
+          "Real-time sync across all your devices"
+        ],
+        image: "/Get started-portrait.png"
+      }
+    ]
+  },
+  {
+    slug: "find-eat-business-3",
+    title: "Find Eat Business",
+    subtitle: "Food & Beverage Marketplace",
+    description: "A personal finance tracker with real-time bank syncing and spending insights.",
+    image:
+      "/find_eat_business_cover.png",
+    icon: "/find_eat_business_logo.png",
+    tags: ["React Native", "Plaid API"],
+    short:
+      "A personal finance tracker with real-time bank syncing and spending insights.",
+    brandColor: "#000000",
+    brandColorLight: "#000000",
+    brandColorDark: "#000000",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Smart Budgeting",
+        description: "Automatically categorize expenses and track spending patterns with AI-powered insights.",
+        bullets: [
+          "Automatic expense categorization",
+          "Real-time spending alerts",
+          "Customizable budget limits"
+        ],
+        image: "/find_eat_business_cover.png"
+      }
+    ]
+  },
+  {
+    slug: "find-eat-3",
+    title: "Find Eat",
+    subtitle: "Travel Companion",
+    description: "A social travel app for planning trips, splitting expenses, and exploring local gems.",
+    image:
+      "/find_eat_cover_1.png",
+    icon: "/find_eat_logo.png",
+    tags: ["Flutter", "Google Maps"],
+    short:
+      "A social travel app for planning trips, splitting expenses, and exploring local gems.",
+    brandColor: "#F97316",
+    brandColorLight: "#FFF7ED",
+    brandColorDark: "#EA580C",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Trip Planning",
+        description: "Collaborate with friends to plan the perfect trip with shared itineraries and real-time updates.",
+        bullets: [
+          "Shared trip boards",
+          "Real-time collaboration",
+          "Smart itinerary suggestions"
+        ],
+        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  },
+  {
+    slug: "solvgo-4",
+    title: "SolvGo",
+    subtitle: "Field Service App",
+    description: "Win more jobs and get \nmore jobs done right.",
+    image:"/solvgo-cover.png",
+    icon: "/solvgo-logo.png",
+    tags: ["Flutter", "OpenAI API"],
+    short:
+      "Win more jobs and get \nmore jobs done right. \nmore jobs done right.",
+    brandColor: "#41AAAA",
+    brandColorLight: "#F3F4F6",
+    brandColorDark: "#6D28D9",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Intelligent Task Automation",
+        description: "Automates repetitive tasks with AI-driven suggestions, saving time and improving focus.",
+        bullets: [
+          "High performance and smooth animations across devices",
+          "Accessible and polished UI patterns with thoughtful UX",
+          "Real-time sync across all your devices"
+        ],
+        image: "/Get started-portrait.png"
+      }
+    ]
+  },
+  {
+    slug: "find-eat-business-4",
+    title: "Find Eat Business",
+    subtitle: "Food & Beverage Marketplace",
+    description: "A personal finance tracker with real-time bank syncing and spending insights.",
+    image:
+      "/find_eat_business_cover.png",
+    icon: "/find_eat_business_logo.png",
+    tags: ["React Native", "Plaid API"],
+    short:
+      "A personal finance tracker with real-time bank syncing and spending insights.",
+    brandColor: "#000000",
+    brandColorLight: "#000000",
+    brandColorDark: "#000000",
+    appStoreUrl: "#",
+    playStoreUrl: "#",
+    features: [
+      {
+        title: "Smart Budgeting",
+        description: "Automatically categorize expenses and track spending patterns with AI-powered insights.",
+        bullets: [
+          "Automatic expense categorization",
+          "Real-time spending alerts",
+          "Customizable budget limits"
+        ],
+        image: "/find_eat_business_cover.png"
       }
     ]
   },

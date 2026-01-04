@@ -1,8 +1,8 @@
+import CallToAction from "@/components/project/CallToAction";
+import DevelopmentJourney from "@/components/project/DevelopmentJourney";
 import FeatureSection from "@/components/project/FeatureSection";
 import HeroSection from "@/components/project/HeroSection";
 import ProjectNav from "@/components/project/ProjectNav";
-import DevelopmentJourney from "@/components/project/DevelopmentJourney";
-import CallToAction from "@/components/project/CallToAction";
 import { projects } from "@/data/projects";
 
 type Props = {
@@ -27,7 +27,7 @@ export default async function Project({ params }: Props) {
           title={project.title} 
           subtitle={project.subtitle} 
           description={project.description || project.short} 
-          image={project.image}
+          image={project.icon || project.image}
           tags={project.tags}
           brandColor={brandColor}
           brandColorLight={brandColorLight}

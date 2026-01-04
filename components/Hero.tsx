@@ -1,4 +1,3 @@
-import BackgroundBlobs from "./BackgroundBlobs";
 
 export default function Hero() {
   return (
@@ -6,8 +5,8 @@ export default function Hero() {
       <section className="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40 bg-white w-full h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-500 text-xs font-medium mb-6 border border-blue-100 animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-blue-500 mr-2 animate-pulse" />
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-green-500 text-xs font-medium mb-6 border border-blue-100 animate-fade-up">
+              <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse" />
               Available for new projects
             </div>
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-6 animate-fade-up animation-delay-150">
@@ -37,9 +36,7 @@ export default function Hero() {
             </div>
 
           </div>
-          <div className="pointer-events-none -z-10 animate-float-slow">
-            <BackgroundBlobs />
-          </div>
+          
 
         </div>
       </section>
