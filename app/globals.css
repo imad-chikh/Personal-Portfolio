@@ -89,6 +89,62 @@ body {
   transform: translateY(-4px) scale(1.01);
 }
 
+/* Wave animation for current experience timeline */
+@keyframes wave {
+  0% {
+    transform: translateY(-100%) scaleY(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100%) scaleY(1.2);
+    opacity: 0.3;
+  }
+}
+
+.animate-wave {
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Pulse ring animation for active timeline node */
+@keyframes pulse-ring {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes pulse-ring-border {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+.animate-pulse-ring-border {
+  animation: pulse-ring-border 2.5s ease-out infinite;
+}
+
 
 /* Project card settle hover shadow (purplish / greenish) */
 .settle-card {

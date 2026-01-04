@@ -33,6 +33,17 @@ export default function LetsConnect() {
       ),
       color: "from-violet-500 to-violet-600",
     },
+    {
+      name: "WhatsApp",
+      url: "https://wa.me/+213793666843",
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.249.639 4.344 1.74 6.138L0 24l6.459-1.688C9.447 23.333 10.656 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.937c-1.107 0-2.185-.217-3.207-.618l-.23-.096-2.386.624.635-2.322-.099-.236C2.387 16.697 1.938 14.469 1.938 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"/>
+          <path d="M17.669 13.374c-.306-.153-1.817-.898-2.103-1.001-.286-.102-.495-.153-.703.153-.207.306-.802 1.002-.984 1.206-.182.203-.364.23-.67.077-.306-.153-1.292-.477-2.463-1.519-.91-.85-1.527-1.9-1.707-2.206-.18-.306-.019-.471.135-.622.138-.136.306-.356.459-.534.153-.178.204-.306.306-.51.102-.204.051-.382-.025-.534-.076-.153-.703-1.694-.963-2.32-.25-.593-.505-.513-.703-.522-.182-.008-.382 0-.59 0-.207 0-.54.077-.823.382-.283.306-1.081 1.054-1.081 2.568 0 1.514 1.107 2.975 1.261 3.178.153.203 2.178 3.322 5.279 4.655.738.315 1.312.504 1.76.646.74.234 1.41.201 1.941.122.593-.089 1.823-.746 2.078-1.466.255-.72.255-1.334.178-1.466-.076-.132-.283-.204-.59-.357z"/>
+        </svg>
+      ),
+      color: "from-green-500 to-green-600",
+    },
   ];
 
   return (
@@ -65,14 +76,14 @@ export default function LetsConnect() {
         </FadeInSection>
 
         <FadeInSection className="mt-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {socialLinks.map((link, index) => (
               <a
                 key={link.name}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 settle-card animate-fade-up"
+                className="group relative bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 settle-card animate-fade-up w-full sm:w-auto"
                 style={{ animationDelay: `${450 + index * 150}ms` }}
               >
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${link.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>

@@ -114,7 +114,7 @@ export const projects: Project[] = [
     brandColorLight: "#000000",
     brandColorDark: "#000000",
     appStoreUrl: "#",
-    playStoreUrl: "#",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.findeat.business",
     features: [
       {
         title: "Smart Budgeting",
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     brandColorLight: "#FFF7ED",
     brandColorDark: "#EA580C",
     appStoreUrl: "#",
-    playStoreUrl: "#",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.findeat.client",
     features: [
       {
         title: "Trip Planning",

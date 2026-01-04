@@ -2,7 +2,9 @@ import BackgroundBlobs from "@/components/BackgroundBlobs";
 import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Experience from "@/components/placeholders/Experience";
 import LetsConnect from "@/components/placeholders/LetsConnect";
+import Services from "@/components/placeholders/Services";
 import TechStack from "@/components/placeholders/TechStack";
 
 export default function Home() {
@@ -11,7 +13,7 @@ export default function Home() {
       <Navbar />
       <main className="relative flex flex-col items-center justify-center">
         <Hero />
-        {/* <div className="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10">
+        {/* <div className="pointer-events-none absolute top-0 left-0 right-0 bottom-10 -z-10">
             <BackgroundBlobs />
           </div> */}
         <Gallery />
@@ -20,6 +22,8 @@ export default function Home() {
           </div>
 
         <TechStack />
+        <Services />
+        <Experience />
         <LetsConnect />
 
         <footer className="py-10 text-sm text-neutral-500 text-center">

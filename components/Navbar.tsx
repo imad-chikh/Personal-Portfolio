@@ -2,15 +2,15 @@
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState("portfolio");
 
   const navItems = [
-    { id: "home", label: "Portfolio" },
-    { id: "about", label: "About Me" },
-    { id: "contact", label: "Contact" },
+    { id: "portfolio", label: "Portfolio", href: "#gallery" },
+    { id: "about", label: "About Me", href: "#experience" },
+    { id: "contact", label: "Contact", href: "#connect" },
   ];
 
   useEffect(() => {
@@ -32,41 +32,71 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const handleNavClick = (page: string) => {
-    setActive(page);
-    setOpen(false);
+  const handleNavClick = (id: string, href: string) => {
+    setActiveSection(id);
+    setIsOpen(false);
+    
+    // Smooth scroll to section
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-gray-100 transition-all duration-300 ease-out ${
-        isVisible ? "translate-y-0 shadow-sm" : "-translate-y-full shadow-none"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          {/* Logo */}
-          <div
-            className="flex-shrink-0 flex items-center cursor-pointer"
-            onClick={() => handleNavClick("home")}
-          >
-       
-            <span className="ml-3 text-xl font-bold tracking-tight text-gray-900">
-              Imad <span className="text-primary">Chikh</span>
-            </span>
+      {/* Navbar Background with blur and border */}
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-md border-b border-gray-100/50 shadow-sm"></div>
+
+      {/* Navbar Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Brand Logo */}
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => handleNavClick("portfolio", "#gallery")}
+              className="flex items-center group transition-all duration-300"
+            >
+              <span className="text-xl font-bold tracking-tight">
+                <span className="text-gray-900">Imad</span>
+                <span className="ml-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500 group-hover:from-blue-600 group-hover:to-violet-600 transition-all duration-300">
+                  Chikh
+                </span>
+              </span>
+            </button>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors
-                  ${active === item.id ? "text-gray-900 border-b-2 border-blue-500" : "text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500"}
-                `}
+                onClick={() => handleNavClick(item.id, item.href)}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
+                  activeSection === item.id ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
+                }`}
               >
                 {item.label}
+                
+                {/* Active underline */}
+                <span
+                  className={`absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 transition-all duration-300 ${
+                    activeSection === item.id ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                  }`}
+                  style={{ transformOrigin: "left" }}
+                ></span>
+
+                {/* Hover underline */}
+                <span
+                  className={`absolute bottom-0 left-4 right-4 h-0.5 bg-gray-300 transition-all duration-300 ${
+                    activeSection === item.id ? "opacity-0" : "opacity-0 group-hover:opacity-100 scale-x-0 group-hover:scale-x-100"
+                  }`}
+                  style={{ transformOrigin: "left" }}
+                ></span>
               </button>
             ))}
           </div>
@@ -74,31 +104,59 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setOpen(!open)}
-              className="text-gray-500 hover:text-gray-900 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              className={`relative w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 ${
+                isOpen ? "bg-gray-100" : "hover:bg-gray-50"
+              }`}
+              aria-label="Toggle menu"
             >
-              <i className={`fas ${open ? "fa-x" : "fa-bars"} text-2xl`}></i>
+              <div className="w-6 h-5 flex flex-col justify-between relative">
+                <span
+                  className={`h-0.5 w-full bg-gray-900 transition-all duration-300 ${
+                    isOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`h-0.5 w-full bg-gray-900 transition-all duration-300 ${
+                    isOpen ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`h-0.5 w-full bg-gray-900 transition-all duration-300 ${
+                    isOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                ></span>
+              </div>
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-white border-b border-gray-100 absolute w-full animate-fade-up">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+      <div
+        className={`absolute top-20 left-0 right-0 md:hidden bg-white/80 backdrop-blur-md border-b border-gray-100/50 shadow-sm transition-all duration-300 ease-out overflow-hidden ${
+          isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-2">
+          {navItems.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id, item.href)}
+              className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 transform ${
+                isOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+              } ${
+                activeSection === item.id
+                  ? "bg-gradient-to-r from-blue-50 to-violet-50 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+              }`}
+              style={{ transitionDelay: isOpen ? `${index * 50}ms` : "0ms" }}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }
